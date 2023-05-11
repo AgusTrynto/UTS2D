@@ -11,10 +11,10 @@ curl_setopt_array($curl, array(
     CURLOPT_CUSTOMREQUEST => 'GET',
 ));
 
-$response = curl_exec($curl); // bentuk JSON
-//echo $response;
+$response = curl_exec($curl);
+
 curl_close($curl);
-$response_array = json_decode($response, true); //Mengubah JSON ke Array
+$response_array = json_decode($response, true);
 $onscreen = '<table class="table" width="100%">
                 <thead>
                     <th>KODE BARANG</th>
@@ -25,7 +25,7 @@ $onscreen = '<table class="table" width="100%">
                 </thead>
             ';
 foreach($response_array as $resp){
-    if($resp['i_code'][0] === "E" && $resp['g_code'][0] === "$"){
+    if($resp['g_code'][0] === "B"){
     $onscreen .= '<tr>
                     <td>'.$resp['i_code'].'</td>
                     <td>'.$resp['i_name'].'</td>
