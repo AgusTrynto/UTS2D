@@ -1,5 +1,4 @@
 <?php
-<?php
 $curl = curl_init();
 curl_setopt_array($curl, array(
     CURLOPT_URL => 'https://farmasi.mimoapps.xyz/mimoqss2auyqD1EAlkgZCOhiffSsFl6QqAEIGtM',
